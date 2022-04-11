@@ -1,6 +1,7 @@
 'use strict'
 
 import 'colors'
+import jwt from 'jsonwebtoken'
 
 export const responseRequest = (statusCode, data, message) => {
 	try {
@@ -17,7 +18,10 @@ export const generateId = () => {
 	return `${random}${date}`
 }
 
-export const generateJWT = () => {
+export const generateJWT = (id) => {
 	try {
+		return jwt.sign({id}, process.env.JWT_SECRET, {
+			expiresIn: '30d'
+		})
 	} catch (error) {}
 }
