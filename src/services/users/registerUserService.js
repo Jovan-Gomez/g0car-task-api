@@ -11,7 +11,7 @@ const registerUserService = async ({ fullName, nickname, email, password }) => {
 		const user = new User({ fullName, nickname, email, password })
 		user.token = generateId()
 		await user.save()
-		return responseRequest(201, user, 'POST /users successfuly')
+		return responseRequest(201, user, 'POST /users successfully')
 	} catch (error) {
 		console.log(`[Service/registerUserService] ${error.message}`.red)
 		throw new Error(error.message)

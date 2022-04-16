@@ -13,7 +13,7 @@ const authUserService = async ({ email, password }) => {
 		if (!isSame) return (responseRequest(400, null, 'The password is incorrect'))
 
 		user.token = generateJWT(user._id)
-		return responseRequest(200, user, 'POST /users/auth successfuly')
+		return responseRequest(200, user, 'POST /users/auth successfully')
 	} catch (error) {
 		console.log(`[Service/authUserService] ${error}`.red)
 		throw new Error(error.message)

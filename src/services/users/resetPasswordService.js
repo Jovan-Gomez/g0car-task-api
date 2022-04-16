@@ -11,7 +11,7 @@ const resetPasswordService = async ({ token, password }) => {
         user.password = password
         user.token = ''
         user.save()
-		return responseRequest(200, true, '/users/reset-password successfuly')
+		return responseRequest(200, true, '/users/reset-password successfully')
 	} catch (error) {
 		console.log(`[Service/resetPasswordService] ${error.message}`.red)
 		throw new Error(error.message)

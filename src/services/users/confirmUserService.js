@@ -11,7 +11,7 @@ const confirmUserService = async ({ token }) => {
         user.isConfirmed = true
 		user.token = ''
 		await user.save()
-		return responseRequest(200, true, 'GET /users/confirm successfuly')
+		return responseRequest(200, true, 'GET /users/confirm successfully')
 	} catch (error) {
 		console.log(`[Service/confirmUserService] ${error.message}`.red)
 		throw new Error(error.message)

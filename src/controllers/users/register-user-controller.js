@@ -7,7 +7,7 @@ import { responseRequest } from '../../utils/index.js'
 const registerUser = async (req, res) => {
 	const { fullName, nickname, email, password } = req.body
 	if (!fullName || !email || !password) {
-		return res.status(400).json(responseRequest(400, null, 'All fields are required'))
+		return res.status(400).json(responseRequest(400, null, 'fields are required'))
 	}
 	try {
 		const {statusCode, data, message} = await registerUserService({ fullName, nickname, email, password })
